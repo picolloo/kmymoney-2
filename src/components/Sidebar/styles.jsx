@@ -37,3 +37,9 @@ export const Button = styled.li`
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   }
 `;
+
+export const RightsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

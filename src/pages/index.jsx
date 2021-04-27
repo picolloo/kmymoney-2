@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { Sidebar } from '../components';
 import GlobalStyle from '../styles/global';
 
@@ -17,7 +19,11 @@ export default function Home() {
           <LabelContainer>
 
             <Label>Contas</Label>
-            <Button>Criar conta</Button>
+            <Button>
+              <Link href="/create-account">
+                Criar conta
+              </Link>
+            </Button>
           </LabelContainer>
 
           <LabelContainer>

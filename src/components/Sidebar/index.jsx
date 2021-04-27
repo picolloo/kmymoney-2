@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {
-  Container, ButtonList, Button,
+  Container, ButtonList, Button, RightsContainer,
 } from './styles';
 
 function Sidebar() {
@@ -21,10 +21,10 @@ function Sidebar() {
         <Button>Sair</Button>
       </ButtonList>
 
-      <div>
+      <RightsContainer>
         <span>Todos os direitos reservados</span>
         <span>2021</span>
-      </div>
+      </RightsContainer>
 
     </Container>
   );
