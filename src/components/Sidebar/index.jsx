@@ -1,11 +1,16 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 import {
-  Container, ButtonList, Button, Logo,
+  Container, ButtonList, Button,
 } from './styles';
 
 function Sidebar() {
   return (
     <Container>
-      <Logo href="/">KMyMoney2</Logo>
+      <Link href="/">
+        <Image src="/logo.svg" width={200} height={30} />
+      </Link>
 
       <ButtonList>
         <Button>Contas</Button>

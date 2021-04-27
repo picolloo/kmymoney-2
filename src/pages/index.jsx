@@ -1,17 +1,49 @@
-import styled from 'styled-components';
-
+import Image from 'next/image';
 import { Sidebar } from '../components';
 import GlobalStyle from '../styles/global';
 
-const Container = styled.div`
-  display: flex;
-`;
+import {
+  FlexContainer, MainContainer, Label, Button, LabelContainer,
+} from '../styles/styles';
 
 export default function Home() {
   return (
-    <Container>
+    <FlexContainer>
       <GlobalStyle />
       <Sidebar />
-    </Container>
+
+      <MainContainer>
+        <div>
+          <LabelContainer>
+
+            <Label>Contas</Label>
+            <Button>Criar conta</Button>
+          </LabelContainer>
+
+          <LabelContainer>
+            <Image
+              src="/card1.svg"
+              width={400}
+              height={400}
+            />
+            <Image
+              src="/card2.svg"
+              width={400}
+              height={400}
+            />
+          </LabelContainer>
+        </div>
+
+        <FlexContainer>
+          <Label>Resumo</Label>
+          <Image
+            src="/chart.svg"
+            width={800}
+            height={400}
+          />
+        </FlexContainer>
+
+      </MainContainer>
+    </FlexContainer>
   );
 }

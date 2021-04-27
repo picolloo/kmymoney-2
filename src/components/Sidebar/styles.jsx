@@ -27,13 +27,13 @@ export const ButtonList = styled.ul`
 export const Button = styled.li`
   color: #70D179;
   background: #FFFFFF;
+  font-weight: 500;
   border-radius: 10px;
   padding: .5rem 1rem;
-  font-weight: 500;
   cursor: pointer;
   text-align: center;
 
   &:hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   }
 `;
