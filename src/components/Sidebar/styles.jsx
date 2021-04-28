@@ -20,24 +20,29 @@ export const ButtonList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   padding: 0;
-`;
 
-export const Button = styled.li`
-  color: #70D179;
-  background: #FFFFFF;
-  font-weight: 500;
-  border-radius: 10px;
-  padding: .5rem 1rem;
-  cursor: pointer;
-  text-align: center;
+  li {
+    color: #70D179;
+    background: #FFFFFF;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    align-self:stretch;
 
-  &:hover {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    &:hover {
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      cursor: pointer;
+    }
   }
 `;
-
 export const RightsContainer = styled.div`
   display: flex;
   flex-direction: column;

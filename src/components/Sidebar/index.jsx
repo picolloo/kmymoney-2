@@ -2,23 +2,47 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {
-  Container, ButtonList, Button, RightsContainer,
+  Container, ButtonList, RightsContainer,
 } from './styles';
 
 function Sidebar() {
   return (
     <Container>
-      <Link href="/">
-        <Image src="/logo.svg" width={200} height={30} />
-      </Link>
+      {/* <Link href="/"> */}
+      <Image src="/logo.svg" width={200} height={30} />
+      {/* </Link> */}
 
       <ButtonList>
-        <Button>Contas</Button>
-        <Button>Transações</Button>
-        <Button>Relatórios</Button>
-        <Button>Configurações</Button>
-        <Button>Ajuda</Button>
-        <Button>Sair</Button>
+        <li>
+          <Link href="/">
+            Contas
+          </Link>
+        </li>
+        <li>
+          <Link href="/transactions">
+            Transações
+          </Link>
+        </li>
+        <li>
+          <Link href="/error">
+            Relatórios
+          </Link>
+        </li>
+        <li>
+          <Link href="/error">
+            Configurações
+          </Link>
+        </li>
+        <li>
+          <Link href="/error">
+            Ajuda
+          </Link>
+        </li>
+        <li>
+          <Link href="/error">
+            Sair
+          </Link>
+        </li>
       </ButtonList>
 
       <RightsContainer>
