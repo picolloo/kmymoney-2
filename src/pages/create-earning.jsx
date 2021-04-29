@@ -188,6 +188,10 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+   > * {
+    cursor: pointer;
+  }
 `;
 
 const SubmitButton = styled.button`
@@ -206,7 +210,8 @@ const SubmitButton = styled.button`
 
 const CancelButton = styled(Link)`
   color: #607D8B;
-  cursor: pointer;
+
+
 `;
 
 const RepeatButton = styled(Image)`

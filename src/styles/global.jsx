@@ -17,6 +17,7 @@ export default createGlobalStyle`
 
   *, button , input, select {
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
   }
 
   a, a:visited {

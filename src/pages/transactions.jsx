@@ -92,6 +92,20 @@ export default function CreateAccount({ transactions }) {
               paid={t.paid}
             />
           ))}
+
+          <HorizontalLine />
+          <BalanceContainer>
+            <span>Dúvidas sobre o saldo? Clique aqui</span>
+
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <span>Saldo atual</span>
+              <span style={{ color: '#625BE6' }}>
+                R$
+                {' '}
+                {transactions[currentMonth].data.reduce((curr, next) => curr + next.amount, 0).toFixed(2) }
+              </span>
+            </div>
+          </BalanceContainer>
         </TransactionList>
 
       </MainContainer>
@@ -99,96 +113,26 @@ export default function CreateAccount({ transactions }) {
   );
 }
 
-export function getStaticProps() {
-  const transactions = Object.freeze([
-    {
-      month: 'Maio',
-      data: [
-        {
-          icon: 'bus',
-          name: 'gasolina',
-          institution: 'Banco Max',
-          amount: -254.30,
-          paid: true,
-        },
-        {
-          icon: 'star',
-          name: 'salário',
-          institution: 'Banco Max',
-          amount: 4400,
-          paid: true,
-        },
-        {
-          icon: 'pet',
-          name: 'ração felina',
-          institution: 'Banco Max',
-          amount: -44.20,
-          paid: true,
-        },
-        {
-          icon: 'shop',
-          name: 'ventilador',
-          institution: 'Cartão de crédito',
-          amount: -129.90,
-          paid: true,
-        },
-        {
-          icon: 'pc',
-          name: 'internet',
-          institution: 'Cartão de crédito',
-          amount: -159.9,
-          paid: true,
-        },
-        {
-          icon: 'shop',
-          name: 'netflix',
-          institution: 'Cartão de crédito',
-          amount: -34.9,
-          paid: false,
-        },
-      ],
-    },
-    {
-      month: 'Abril',
-      data: [
-        {
-          icon: 'star',
-          name: 'salário',
-          institution: 'Banco Max',
-          amount: 4400,
-          paid: false,
-        },
-        {
-          icon: 'shop',
-          name: 'ventilador',
-          institution: 'Cartão de crédito',
-          amount: -129.90,
-          paid: false,
-        },
-        {
-          icon: 'pc',
-          name: 'internet',
-          institution: 'Cartão de crédito',
-          amount: -159.9,
-          paid: false,
-        },
-        {
-          icon: 'shop',
-          name: 'netflix',
-          institution: 'Cartão de crédito',
-          amount: -34.9,
-          paid: false,
-        },
-      ],
-    },
-  ]);
+const HorizontalLine = styled.div`
+  height: 1px;
+  margin: .3rem 0;
+  border: 1px solid #EBEBEB;
+`;
 
-  return {
-    props: {
-      transactions,
-    },
-  };
-}
+const BalanceContainer = styled.div`
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #EBEBEB;
+  color: #9DA0B4;
+  padding: 1rem .8rem;
+  border-radius: 10px;
+
+  > span {
+    color: #70D179;
+    cursor: pointer;
+  }
+`;
 
 const TransactionList = styled.div`
   display:flex;
@@ -298,3 +242,94 @@ const RemoveButton = styled(Button)`
 const MonthSelect = styled(Button)`
   cursor: pointer;
 `;
+
+export function getStaticProps() {
+  const transactions = Object.freeze([
+    {
+      month: 'Maio',
+      data: [
+        {
+          icon: 'bus',
+          name: 'gasolina',
+          institution: 'Banco Max',
+          amount: -254.30,
+          paid: true,
+        },
+        {
+          icon: 'star',
+          name: 'salário',
+          institution: 'Banco Max',
+          amount: 4400,
+          paid: true,
+        },
+        {
+          icon: 'pet',
+          name: 'ração felina',
+          institution: 'Banco Max',
+          amount: -44.20,
+          paid: true,
+        },
+        {
+          icon: 'shop',
+          name: 'ventilador',
+          institution: 'Cartão de crédito',
+          amount: -129.90,
+          paid: true,
+        },
+        {
+          icon: 'pc',
+          name: 'internet',
+          institution: 'Cartão de crédito',
+          amount: -159.9,
+          paid: true,
+        },
+        {
+          icon: 'shop',
+          name: 'netflix',
+          institution: 'Cartão de crédito',
+          amount: -34.9,
+          paid: false,
+        },
+      ],
+    },
+    {
+      month: 'Abril',
+      data: [
+        {
+          icon: 'star',
+          name: 'salário',
+          institution: 'Banco Max',
+          amount: 4400,
+          paid: false,
+        },
+        {
+          icon: 'shop',
+          name: 'ventilador',
+          institution: 'Cartão de crédito',
+          amount: -129.90,
+          paid: false,
+        },
+        {
+          icon: 'pc',
+          name: 'internet',
+          institution: 'Cartão de crédito',
+          amount: -159.9,
+          paid: false,
+        },
+        {
+          icon: 'shop',
+          name: 'netflix',
+          institution: 'Cartão de crédito',
+          amount: -34.9,
+          paid: false,
+        },
+      ],
+    },
+  ]);
+
+  return {
+    props: {
+      transactions,
+    },
+  };
+}
