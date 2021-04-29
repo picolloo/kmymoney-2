@@ -10,7 +10,12 @@ export default createGlobalStyle`
     height: 100%;
   }
 
-  *, button , input {
+  input,select {
+    color: #607D8B ;
+
+  }
+
+  *, button , input, select {
     font-family: 'Roboto', sans-serif;
   }
 
@@ -18,5 +23,9 @@ export default createGlobalStyle`
     text-decoration: inherit;
     color: inherit;
     cursor: auto;
+  }
+
+  input {
+    cursor: pointer;
   }
 `;

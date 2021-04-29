@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { useState } from 'react';
 
@@ -63,8 +64,20 @@ export default function CreateAccount({ transactions }) {
           </MonthSelect>
 
           <ButtonContainer>
-            <AddButton><MdAdd /></AddButton>
-            <RemoveButton><MdRemove /></RemoveButton>
+            <AddButton>
+              <Link href="/create-earning" passHref>
+                <a>
+                  <MdAdd />
+                </a>
+              </Link>
+            </AddButton>
+            <RemoveButton>
+              <Link href="/create-expense" passHref>
+                <a>
+                  <MdRemove />
+                </a>
+              </Link>
+            </RemoveButton>
           </ButtonContainer>
         </LabelContainer>
 
@@ -239,11 +252,14 @@ const Button = styled.button`
   width: 40px;
   height: 40px;
   font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  cursor: pointer;
   background: none;
+
+  &, * {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    cursor: pointer;  
+  }
 `;
 
 const PaidButton = styled(Button)`

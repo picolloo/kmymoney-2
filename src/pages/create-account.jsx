@@ -17,8 +17,8 @@ export default function CreateAccount() {
           <InputContainer>
             <label>Instituição</label>
 
-            <Select name="intitutions" id="intitutions">
-              <option value="" selected disabled hidden>Selecione uma opção</option>
+            <Select name="intitutions" id="intitutions" defaultValue="DEFAULT" required>
+              <option value="DEFAULT" disabled hidden>Selecione uma opção</option>
               <option value="nubank">Nubank</option>
               <option value="inter">Inter</option>
               <option value="itau">Itau</option>

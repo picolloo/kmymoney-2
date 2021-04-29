@@ -8,16 +8,14 @@ import {
 function Sidebar() {
   return (
     <Container>
-      {/* <Link href="/"> */}
       <Image src="/logo.svg" width={200} height={30} />
-      {/* </Link> */}
 
       <ButtonList>
-        <li>
-          <Link href="/">
+        <Link href="/">
+          <li>
             Contas
-          </Link>
-        </li>
+          </li>
+        </Link>
         <li>
           <Link href="/transactions">
             Transações
